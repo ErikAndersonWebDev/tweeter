@@ -15,11 +15,28 @@ html {
  */
 
 body {
-  color: #545149;
+  color: #4d5449;
   background-color: #f4f1ec;
   font-size: 24px;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+nav {
+  font-family: 'Bungee', cursive;
 }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+
+.new-tweet {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+i {
+  color: #ff0011
+}
