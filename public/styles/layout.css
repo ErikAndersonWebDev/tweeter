@@ -29,14 +29,8 @@ nav {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
-
-.new-tweet {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-}
-
-i {
-  color: #ff0011
-}
+ main {
+  padding: 0 5%;
+  align-content: center;
+  background-color: #f4f1ec;
+ }

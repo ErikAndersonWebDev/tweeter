@@ -13,9 +13,23 @@ nav {
 
 span {
   font-family: 'Bungee', cursive;
+  font-size: 36px;
 }
 
-.new-tweet {
+.new-tweet-button {
   display: flex;
   font-family: 'Source Sans Pro', sans-serif;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+}
+
+p {
+  padding: 0;
+  margin: 0;
+}
+
+i {
+  color: #ff0011;
+  justify-self: center;
 }
