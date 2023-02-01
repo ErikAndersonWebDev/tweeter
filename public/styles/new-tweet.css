@@ -7,11 +7,8 @@
 
 #tweet-text {
   display: flex;
-  border-top: hidden;
-  border-right: hidden;
-  border-left: hidden;
-  border-bottom-style: groove;
-  border-width: thick;
+  border: 0;
+  border-bottom: 5px black groove;
   width: 100%;
   height: 40px;
   background-color: #f4f1ec;

@@ -1,0 +1,44 @@
+/* Styling for tweets */
+article {
+  display: flex;
+  flex-direction: column;
+  height: 250px;
+  background-color: gray;
+  margin-top: 100px;
+  border: 5px black groove;
+  margin-bottom: 40px;
+}
+article:hover {
+  box-shadow: 10px 5px 5px grey;
+}
+
+header.tweet {
+  display: flex;
+  flex-direction: column;
+  height: 100px;
+  width: 100%;
+  background-color: green;
+}
+
+footer.tweet {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 10px
+}
+
+.posted-tweet {
+  display: flex;
+  background-color: pink;
+  height: 40px;
+
+}
+
+i {
+  padding: 0 0 0 10px
+}
+
+i:hover {
+  color: rgb(235, 135, 13);
+  cursor: pointer;
+}
