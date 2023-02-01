@@ -56,12 +56,18 @@ $(document).ready(() => {
     }
     
     const renderTweets = function(tweets) {
-      for (let tw of tweets) {
-        const $createdTweet = createTweetElement(tw);
+      for (let tweet of tweets) {
+        const $createdTweet = createTweetElement(tweet);
         $('#tweets-container').append($createdTweet); 
       }
     }
     
     renderTweets(data);
     
+    $("form").submit(function(event) {
+      event.preventDefault();
+      console.log(this)
+      $.post("/tweets/", $(this).serialize());
+    });
+
   });
