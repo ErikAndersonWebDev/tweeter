@@ -12,15 +12,31 @@ article:hover {
   box-shadow: 10px 5px 5px grey;
 }
 
-header.tweet {
+article header {
   display: flex;
   flex-direction: row;
   height: 80px;
   width: 100%;
   justify-content: space-between;
+  align-content: flex-start;
 }
 
-footer.tweet {
+article header div {
+  display: flex;
+  height: 80px;
+}
+
+article header p {
+  display: flex;
+  flex-direction: row;
+  justify-self: flex-start;
+  align-self: center;
+}
+article .posted-tweet {
+  padding-top: 10px;
+}
+
+article footer {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
