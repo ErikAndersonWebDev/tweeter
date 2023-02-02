@@ -1,4 +1,10 @@
 $(document).ready(() => {
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+  
   const createTweetElement = function(obj) {
     const name = obj.user.name;
     const handle = obj.user.handle;
@@ -14,7 +20,7 @@ $(document).ready(() => {
           <p>${handle}</p>
         </header>
         <div class="posted-tweet">
-          ${text}
+          ${escape(text)}
         </div>
         <footer class="tweet">
           Posted ${dateCreated}
@@ -51,18 +57,21 @@ $(document).ready(() => {
 
   $("form").submit(function(event) {
     event.preventDefault();
-    if ($('textarea').val() === "") {
+    if ($('textarea').val().trim() === "") {
       return alert("Cannot submit an empty tweet")
     } else  if ($('textarea').val().length > 140) {
       return alert("Your tweet is too long")
     } else {
     $.post("/tweets/", $(this).serialize())
-    .then((response) => {
+    .then(() => {
       loadTweets();
       $('textarea').val("");
       $('.counter').text(140);
     });
   }});
 
-  
+  $("#arrow-button").click(function() {
+    $("form").slideToggle(800)
+  })
+
 });
