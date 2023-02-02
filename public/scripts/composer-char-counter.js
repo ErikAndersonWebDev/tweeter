@@ -1,4 +1,5 @@
 $(document).ready(function() {
+// Tweet character counter - default 140 - black-color when above 0, red-color when below 0
   $('textarea').keyup(function(){
     const charCount = $(this).val().length;
     const counter = $(this).parent().children().children('.counter');

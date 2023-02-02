@@ -1,4 +1,6 @@
 $(document).ready(() => {
+  
+// Hide error message box and toTop button upon document rendering
   $("#error").hide();
   $("#toTop").hide();
   const escape = function (str) {
@@ -6,13 +8,14 @@ $(document).ready(() => {
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
-  
+
+// Error message animation
   const errorMessage = function(message) {
     $("#error").text(message);
     $("#error").slideDown(700);
   }
 
-// 
+// Template for creating a new tweet
   const createTweetElement = function(obj) {
     const name = obj.user.name;
     const handle = obj.user.handle;
@@ -42,6 +45,7 @@ $(document).ready(() => {
     `)
     return $tweet;
   }
+
 // Loop through tweet database
   const renderTweets = function(tweets) {
     $('#tweets-container').empty();
@@ -50,28 +54,28 @@ $(document).ready(() => {
       $('#tweets-container').prepend($createdTweet); 
     }
   }
-// Load tweets async
+
+// Load tweets from database
   const loadTweets = function() {
     $.ajax({
       url: "/tweets",
       dataType: "json",
       success: function(data) {
-        renderTweets(data)
+        renderTweets(data);
       }
     });
   }
-// Load tweets from database
   loadTweets();
 
-// Submit new tweet and load it to the top of the list
+// Submit new tweet and reload tweet database, starting from newest tweet
   $("form").submit(function(event) {
     event.preventDefault();
     if ($('textarea').val().trim() === "") {
-      return errorMessage("Cannot post a blank tweet")
+      return errorMessage("Cannot post a blank tweet");
     } else  if ($('textarea').val().length > 140) {
-      return errorMessage("Your tweet is too long")
+      return errorMessage("Your tweet is too long");
     } else {
-      $("#error").slideUp(300)
+      $("#error").slideUp(300);
       $.post("/tweets/", $(this).serialize())
       .then(() => {
         loadTweets();
@@ -80,11 +84,11 @@ $(document).ready(() => {
     });
   }});
 
-//Toggle new tweet textarea
+// Toggle new tweet textarea
   $("#arrow-button").click(function() {
     $("form").slideToggle(800);
     $("textarea").focus();
-  })
+  });
 
 // Scroll-to-top button functionality
   $(window).scroll(function() {
@@ -94,10 +98,9 @@ $(document).ready(() => {
     if ($(this).scrollTop() < 200) {
       $("#toTop").hide();
     }
-  })
-
+  });
   $("#toTop").click(function() {
     $(window).scrollTop(0);
     $("#toTop").hide();
-  })
+  });
 });

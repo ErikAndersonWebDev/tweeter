@@ -1,3 +1,4 @@
+/* Profile picture and name */
 header.profile {
   display: flex;
   height: 520px;
@@ -11,6 +12,7 @@ header.profile {
   padding: 120px 0 0 0;
 }
 
+/* Profile picture and name style in desktop view */
 @media (min-width: 1024px) {
   header.profile {
     margin-top: 200px;

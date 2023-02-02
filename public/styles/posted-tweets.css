@@ -8,6 +8,7 @@ article {
   margin-bottom: 40px;
   padding: 0 5px;
 }
+
 article:hover {
   box-shadow: 10px 5px 5px grey;
 }
@@ -49,7 +50,6 @@ article footer {
   height: 60px;
   border: 0;
   border-bottom: 5px black groove;
-
 }
 
 #react {

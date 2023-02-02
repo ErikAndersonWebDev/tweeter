@@ -1,3 +1,4 @@
+/* Compose tweet container */
 .new-tweet {
   display: flex;
   width: 100%;
@@ -6,6 +7,7 @@
   padding-top: 30px;
 }
 
+/* Compose new tweet textarea */
 #tweet-text {
   display: flex;
   border: 0;
@@ -17,18 +19,21 @@
   margin: 10px 0;
 }
 
+/* Tweet button and counter spacing */
 .new-tweet div {
   display: flex;
   justify-content: space-between;
   font-family: 'Bungee', cursive;
 }
 
+/* Tweet button */
 .new-tweet button {
   background-color: #4056A1;
   color: #ffffff;
   cursor: pointer;
 }
 
+/* Remove outline of textarea on focus */
 textarea:focus {
   outline: none;
 }
