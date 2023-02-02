@@ -46,19 +46,23 @@ $(document).ready(() => {
       }
     });
   }
-  
+
   loadTweets();
 
   $("form").submit(function(event) {
     event.preventDefault();
-
+    if ($('textarea').val() === "") {
+      return alert("Cannot submit an empty tweet")
+    } else  if ($('textarea').val().length > 140) {
+      return alert("Your tweet is too long")
+    } else {
     $.post("/tweets/", $(this).serialize())
     .then((response) => {
       loadTweets();
-      $(this).children('textarea').val("");
+      $('textarea').val("");
       $('.counter').text(140);
     });
-  });
+  }});
 
   
 });
