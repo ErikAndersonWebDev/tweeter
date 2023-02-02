@@ -54,3 +54,15 @@ nav {
   font-family: "Source Sans Pro", sans-serif;
   font-size: 36px;
 }
+
+@media (min-width: 1024px) {
+  body {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    height: auto;
+  }
+
+  main {
+    margin-top: 165px;
+  }
+}
