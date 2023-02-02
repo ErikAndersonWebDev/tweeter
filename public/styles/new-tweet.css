@@ -3,6 +3,7 @@
   width: 100%;
   justify-items: center;
   flex-direction: column;
+  padding-top: 30px;
 }
 
 #tweet-text {
@@ -25,4 +26,9 @@
 .new-tweet button {
   background-color: #4056A1;
   color: #ffffff;
+  cursor: pointer;
+}
+
+textarea:focus {
+  outline: none;
 }

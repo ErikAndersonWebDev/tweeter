@@ -1,6 +1,6 @@
 $(document).ready(() => {
   $("#error").hide();
-
+  $("#toTop").hide();
   const escape = function (str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
@@ -12,6 +12,7 @@ $(document).ready(() => {
     $("#error").slideDown(700);
   }
 
+// 
   const createTweetElement = function(obj) {
     const name = obj.user.name;
     const handle = obj.user.handle;
@@ -41,7 +42,7 @@ $(document).ready(() => {
     `)
     return $tweet;
   }
-  
+// Loop through tweet database
   const renderTweets = function(tweets) {
     $('#tweets-container').empty();
     for (let tweet of tweets) {
@@ -49,7 +50,7 @@ $(document).ready(() => {
       $('#tweets-container').prepend($createdTweet); 
     }
   }
-
+// Load tweets async
   const loadTweets = function() {
     $.ajax({
       url: "/tweets",
@@ -59,9 +60,10 @@ $(document).ready(() => {
       }
     });
   }
-
+// Load tweets from database
   loadTweets();
 
+// Submit new tweet and load it to the top of the list
   $("form").submit(function(event) {
     event.preventDefault();
     if ($('textarea').val().trim() === "") {
@@ -78,8 +80,24 @@ $(document).ready(() => {
     });
   }});
 
+//Toggle new tweet textarea
   $("#arrow-button").click(function() {
-    $("form").slideToggle(800)
+    $("form").slideToggle(800);
+    $("textarea").focus();
   })
 
+// Scroll-to-top button functionality
+  $(window).scroll(function() {
+    if ($(this).scrollTop() > 200) {
+      $("#toTop").show();
+    }
+    if ($(this).scrollTop() < 200) {
+      $("#toTop").hide();
+    }
+  })
+
+  $("#toTop").click(function() {
+    $(window).scrollTop(0);
+    $("#toTop").hide();
+  })
 });
