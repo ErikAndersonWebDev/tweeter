@@ -42,6 +42,7 @@ nav {
 
 #arrow-button {
   color:red;
+  cursor: pointer;
 }
 
 #error {
