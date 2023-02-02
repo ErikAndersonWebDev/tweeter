@@ -33,7 +33,7 @@ $(document).ready(() => {
     $('#tweets-container').empty();
     for (let tweet of tweets) {
       const $createdTweet = createTweetElement(tweet);
-      $('#tweets-container').append($createdTweet); 
+      $('#tweets-container').prepend($createdTweet); 
     }
   }
 
@@ -51,7 +51,7 @@ $(document).ready(() => {
 
   $("form").submit(function(event) {
     event.preventDefault();
-    console.log(this)
+
     $.post("/tweets/", $(this).serialize())
     .then((response) => {
       loadTweets();
