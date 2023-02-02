@@ -39,3 +39,17 @@ nav {
  .negative {
   color: red;
  }
+
+#arrow-button {
+  color:red;
+}
+
+#error {
+  border: 5px red groove;
+  height: 60px;
+  justify-content: center;
+  align-items: center;
+  color: red;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 36px;
+}

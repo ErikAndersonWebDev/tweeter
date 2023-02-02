@@ -1,10 +1,17 @@
 $(document).ready(() => {
+  $("#error").hide();
+
   const escape = function (str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
   
+  const errorMessage = function(message) {
+    $("#error").text(message);
+    $("#error").slideDown(700);
+  }
+
   const createTweetElement = function(obj) {
     const name = obj.user.name;
     const handle = obj.user.handle;
@@ -25,9 +32,9 @@ $(document).ready(() => {
         <footer class="tweet">
           Posted ${dateCreated}
           <div>
-            <i class="fa-solid fa-flag"></i>
-            <i class="fa-solid fa-retweet"></i>
-            <i class="fa-solid fa-heart"></i>
+            <i id="react" class="fa-solid fa-flag"></i>
+            <i id="react" class="fa-solid fa-retweet"></i>
+            <i id="react" class="fa-solid fa-heart"></i>
           </div>
         </footer>
       </article>
@@ -58,15 +65,16 @@ $(document).ready(() => {
   $("form").submit(function(event) {
     event.preventDefault();
     if ($('textarea').val().trim() === "") {
-      return alert("Cannot submit an empty tweet")
+      return errorMessage("Cannot post a blank tweet")
     } else  if ($('textarea').val().length > 140) {
-      return alert("Your tweet is too long")
+      return errorMessage("Your tweet is too long")
     } else {
-    $.post("/tweets/", $(this).serialize())
-    .then(() => {
-      loadTweets();
-      $('textarea').val("");
-      $('.counter').text(140);
+      $("#error").slideUp(300)
+      $.post("/tweets/", $(this).serialize())
+      .then(() => {
+        loadTweets();
+        $("textarea").val("");
+        $(".counter").text(140);
     });
   }});
 

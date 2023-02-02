@@ -52,12 +52,12 @@ article footer {
 
 }
 
-i {
+#react {
   padding: 0 0 0 10px;
-  color: black;
+  color: #4056A1;
 }
 
-i:hover {
+#react:hover {
   color: rgb(235, 135, 13);
   cursor: pointer;
 }
