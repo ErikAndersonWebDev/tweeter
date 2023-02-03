@@ -20,12 +20,13 @@ $(document).ready(() => {
     const name = obj.user.name;
     const handle = obj.user.handle;
     const text = obj.content.text;
+    const avatar = obj.user.avatars;
     const dateCreated = timeago.format(obj.created_at);
     const $tweet = $(`
       <article class="tweet">
         <header class="tweet">
           <div class="pro-details">
-            <img src="/images/profile-hex.png">
+            <img src=${avatar}>
             <p>${name}</p>
           </div>
           <p>${handle}</p>
