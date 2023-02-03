@@ -16,3 +16,11 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
+- Chance
+- Body-parser
+
+## Screenshots
+
+!["Screenshot of desktop view"](https://github.com/ErikAndersonWebDev/tweeter/tree/master/public/images/Desktop-View.jpg)
+!["Screenshot of mobile view"](https://github.com/ErikAndersonWebDev/tweeter/tree/master/public/images/Tablet-Mobile-View.jpg)
+!["Screenshot of a long tweet error"](https://github.com/ErikAndersonWebDev/tweeter/tree/master/public/images/Long-Tweet-Error.jpg)
