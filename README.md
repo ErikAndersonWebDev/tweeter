@@ -21,6 +21,10 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Screenshots
 
-!["Screenshot of desktop view"](https://github.com/ErikAndersonWebDev/tweeter/tree/master/public/images/Desktop-View.jpg)
-!["Screenshot of mobile view"](https://github.com/ErikAndersonWebDev/tweeter/tree/master/public/images/Tablet-Mobile-View.jpg)
-!["Screenshot of a long tweet error"](https://github.com/ErikAndersonWebDev/tweeter/tree/master/public/images/Long-Tweet-Error.jpg)
+1. Screenshot of desktop view
+2. Screenshot of mobile view
+3. Screenshot of a long tweet error
+
+!["Screenshot of desktop view"](public/images/Desktop-View.jpg)
+!["Screenshot of mobile view"](public/images/Tablet-Mobile-View.jpg)
+!["Screenshot of a long tweet error"](public/images/Long-Tweet-Error.jpg)
